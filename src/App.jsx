@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BookBrowser from "./browser";
-import Informacion from "./info";
+import Informacion from "./Info";
 import Proyectos from "./Proyectos";
 import Redes from "./redes";
 import Navbar from "./nav";
