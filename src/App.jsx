@@ -1,20 +1,25 @@
-import BookBrowser from "./browser"
-import Navbar from "./nav"
-
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BookBrowser from "./browser";
+import Informacion from "./info";
+import Proyectos from "./Proyectos";
+import Redes from "./redes";
+import Navbar from "./nav";
 
 function App() {
-
-
   return (
-    <section>
-      <Navbar></Navbar>
-
-      <BookBrowser />
-
-    </section>
-  )
-};
+    <BrowserRouter>
+      <section>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<BookBrowser />} />
+          <Route path="/Informacion" element={<Informacion />} />
+          <Route path="/Proyectos" element={<Proyectos />} />
+          <Route path="/Redes" element={<Redes />} />
+        </Routes>
+      </section>
+    </BrowserRouter>
+  );
+}
 
 export default App;
 

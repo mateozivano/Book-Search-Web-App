@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import BookList from './bookList'
 import BookDetails from "./bookDetails"
 
 async function searchBooks(query, startIndex, setTotalItems) {
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=${startIndex}`;
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=20&startIndex=${startIndex}`;
     try {
         const response = await fetch(API_URL);
         const data = await response.json();
@@ -37,7 +37,7 @@ const BookBrowser = () => {
     };
 
     const handleNextPage = async () => {
-        const newStartIndex = startIndex + 40;
+        const newStartIndex = startIndex + 20;
         if (newStartIndex >= totalItems) {
             return;
         }
@@ -49,7 +49,7 @@ const BookBrowser = () => {
         if (startIndex <= 0) {
             return;
         }
-        const newStartIndex = startIndex - 40;
+        const newStartIndex = startIndex - 20;
         setStartIndex(newStartIndex);
         await fetchBooks();
     };
