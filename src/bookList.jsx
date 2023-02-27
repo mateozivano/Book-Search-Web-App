@@ -1,4 +1,5 @@
 import React from 'react';
+import icon404 from "../public/icon-image-not-found-free-vector.webp";
 
 const BookList = ({ books, handleSelectBook }) => {
     return (
@@ -7,7 +8,7 @@ const BookList = ({ books, handleSelectBook }) => {
                 <li className='p-4' key={`${book.id}-${index}`}>
                     <div onClick={() => handleSelectBook(book)} className='flex shadow'>
                         <div>
-                            <img className='h-48 w-32' src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "../public/icon-image-not-found-free-vector.webp"} alt="Book Cover" />
+                            <img className='h-48 w-32' src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : icon404} alt="Book Cover" />
                         </div>
                         <div className='pl-4 text-left'>
                             <h2>{book.volumeInfo.title}</h2>
